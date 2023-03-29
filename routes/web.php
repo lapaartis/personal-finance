@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AccountController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +31,13 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+Route::get('tables', [DashboardController::class, 'tables'])->name('tables');
+Route::get('forms', [DashboardController::class, 'forms'])->name('forms');
+Route::get('ui', [DashboardController::class, 'ui'])->name('ui');
+Route::get('error', [DashboardController::class, 'error'])->name('error');
 
 Route::resource('accounts',AccountController::class);
