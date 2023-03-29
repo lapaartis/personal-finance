@@ -9,26 +9,26 @@ class DashboardController extends Controller
 {
   public function index()
   {
-    return Inertia::render('Dashboard');
+    return Inertia::render('DashboardView');
   }
   public function profile()
   {
-    return Inertia::render('View/Profile');
+    return Inertia::render('View/ProfileView');
   }
   public function tables()
   {
-    return Inertia::render('View/Tables');
+    return Inertia::render('View/TablesView');
   }
   public function forms()
   {
-    return Inertia::render('View/Forms');
+    return Inertia::render('View/FormsView');
   }
   public function ui()
   {
-    return Inertia::render('View/Ui');
+    return Inertia::render('View/UiView');
   }
   public function error()
   {
-    return Inertia::render('View/Error');
+    return Inertia::render('View/ErrorView');
   }
 }

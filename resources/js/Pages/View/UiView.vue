@@ -96,12 +96,18 @@ const styleStore = useStyleStore();
       <p>Lorem ipsum dolor</p>
     </CardBoxModal>
 
-    <CardBoxModal v-model="modalThreeActive" title="Success" button="success">
+    <CardBoxModal
+      v-model="modalThreeActive"
+      title="Success"
+      button="success"
+    >
       <p>This is sample modal</p>
       <p>Lorem ipsum dolor</p>
     </CardBoxModal>
 
-    <SectionTitle first>Dark mode</SectionTitle>
+    <SectionTitle first>
+      Dark mode
+    </SectionTitle>
 
     <SectionMain>
       <CardBox class="md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl md:mx-auto">
@@ -127,7 +133,12 @@ const styleStore = useStyleStore();
           @click="modalOneActive = true"
         >
           <CardBoxComponentTitle title="Please confirm action">
-            <BaseButton :icon="mdiClose" color="whiteDark" small rounded-full />
+            <BaseButton
+              :icon="mdiClose"
+              color="whiteDark"
+              small
+              rounded-full
+            />
           </CardBoxComponentTitle>
           <div class="space-y-3">
             <p>Click to see in action</p>
@@ -135,8 +146,15 @@ const styleStore = useStyleStore();
 
           <template #footer>
             <BaseButtons>
-              <BaseButton label="Confirm" color="info" />
-              <BaseButton label="Cancel" color="info" outline />
+              <BaseButton
+                label="Confirm"
+                color="info"
+              />
+              <BaseButton
+                label="Cancel"
+                color="info"
+                outline
+              />
             </BaseButtons>
           </template>
         </CardBox>
@@ -154,7 +172,10 @@ const styleStore = useStyleStore();
 
           <template #footer>
             <BaseButtons>
-              <BaseButton label="Done" color="danger" />
+              <BaseButton
+                label="Done"
+                color="danger"
+              />
             </BaseButtons>
           </template>
         </CardBox>
@@ -171,14 +192,19 @@ const styleStore = useStyleStore();
           </div>
 
           <template #footer>
-            <BaseButton label="Done" color="success" />
+            <BaseButton
+              label="Done"
+              color="success"
+            />
           </template>
         </CardBox>
       </div>
     </SectionMain>
 
     <SectionTitle custom>
-      <h1 class="text-2xl text-gray-500 dark:text-slate-400">Notifications</h1>
+      <h1 class="text-2xl text-gray-500 dark:text-slate-400">
+        Notifications
+      </h1>
       <div class="flex items-center justify-center mt-6">
         <FormCheckRadioGroup
           v-model="notificationSettingsModel"
@@ -513,7 +539,11 @@ const styleStore = useStyleStore();
       <div class="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-2">
         <CardBox>
           <CardBoxComponentTitle title="With title & icon">
-            <BaseButton :icon="mdiReload" color="whiteDark" rounded-full />
+            <BaseButton
+              :icon="mdiReload"
+              color="whiteDark"
+              rounded-full
+            />
           </CardBoxComponentTitle>
           <div class="space-y-3">
             <p>Card with title, icon & footer</p>
@@ -521,8 +551,15 @@ const styleStore = useStyleStore();
 
           <template #footer>
             <BaseButtons>
-              <BaseButton label="Confirm" color="info" />
-              <BaseButton label="Cancel" color="info" outline />
+              <BaseButton
+                label="Confirm"
+                color="info"
+              />
+              <BaseButton
+                label="Cancel"
+                color="info"
+                outline
+              />
             </BaseButtons>
           </template>
         </CardBox>
@@ -532,8 +569,15 @@ const styleStore = useStyleStore();
 
           <template #footer>
             <BaseButtons>
-              <BaseButton label="Confirm" color="info" />
-              <BaseButton label="Cancel" color="info" outline />
+              <BaseButton
+                label="Confirm"
+                color="info"
+              />
+              <BaseButton
+                label="Cancel"
+                color="info"
+                outline
+              />
             </BaseButtons>
           </template>
         </CardBox>

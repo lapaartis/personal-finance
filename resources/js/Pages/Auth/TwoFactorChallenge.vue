@@ -75,12 +75,12 @@ const submit = () => {
         >
           <FormControl
             id="code"
-            @set-ref="codeInput = $event"
             v-model="form.code"
             type="text"
             inputmode="numeric"
             autofocus
             autocomplete="one-time-code"
+            @set-ref="codeInput = $event"
           />
         </FormField>
 
@@ -92,11 +92,11 @@ const submit = () => {
         >
           <FormControl
             id="recovery_code"
-            @set-ref="recoveryCodeInput = $event"
             v-model="form.recovery_code"
             type="text"
             class="mt-1 block w-full"
             autocomplete="one-time-code"
+            @set-ref="recoveryCodeInput = $event"
           />
         </FormField>
 

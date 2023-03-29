@@ -72,13 +72,26 @@ const formStatusSubmit = () => {
           small
         />
       </SectionTitleLineWithButton>
-      <CardBox form @submit.prevent="submit">
+      <CardBox
+        form
+        @submit.prevent="submit"
+      >
         <FormField label="Grouped with icons">
-          <FormControl v-model="form.name" :icon="mdiAccount" />
-          <FormControl v-model="form.email" type="email" :icon="mdiMail" />
+          <FormControl
+            v-model="form.name"
+            :icon="mdiAccount"
+          />
+          <FormControl
+            v-model="form.email"
+            type="email"
+            :icon="mdiMail"
+          />
         </FormField>
 
-        <FormField label="With help line" help="Do not enter the leading zero">
+        <FormField
+          label="With help line"
+          help="Do not enter the leading zero"
+        >
           <FormControl
             v-model="form.phone"
             type="tel"
@@ -87,12 +100,18 @@ const formStatusSubmit = () => {
         </FormField>
 
         <FormField label="Dropdown">
-          <FormControl v-model="form.department" :options="selectOptions" />
+          <FormControl
+            v-model="form.department"
+            :options="selectOptions"
+          />
         </FormField>
 
         <BaseDivider />
 
-        <FormField label="Question" help="Your question. Max 255 characters">
+        <FormField
+          label="Question"
+          help="Your question. Max 255 characters"
+        >
           <FormControl
             type="textarea"
             placeholder="Explain how we can help you"
@@ -101,8 +120,17 @@ const formStatusSubmit = () => {
 
         <template #footer>
           <BaseButtons>
-            <BaseButton type="submit" color="info" label="Submit" />
-            <BaseButton type="reset" color="info" outline label="Reset" />
+            <BaseButton
+              type="submit"
+              color="info"
+              label="Submit"
+            />
+            <BaseButton
+              type="reset"
+              color="info"
+              outline
+              label="Reset"
+            />
           </BaseButtons>
         </template>
       </CardBox>
@@ -144,7 +172,10 @@ const formStatusSubmit = () => {
 
         <BaseDivider />
 
-        <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+        <FormFilePicker
+          v-model="customElementsForm.file"
+          label="Upload"
+        />
       </CardBox>
 
       <SectionTitle>Form with status example</SectionTitle>
@@ -159,12 +190,10 @@ const formStatusSubmit = () => {
           :color="formStatusOptions[formStatusCurrent]"
           :is-placed-with-header="formStatusWithHeader"
         >
-          <span
-            ><b class="capitalize">{{
-              formStatusOptions[formStatusCurrent]
-            }}</b>
-            state</span
-          >
+          <span><b class="capitalize">{{
+            formStatusOptions[formStatusCurrent]
+          }}</b>
+            state</span>
         </NotificationBarInCard>
         <FormField label="Fields">
           <FormControl
@@ -176,7 +205,11 @@ const formStatusSubmit = () => {
         </FormField>
 
         <template #footer>
-          <BaseButton label="Trigger" type="submit" color="info" />
+          <BaseButton
+            label="Trigger"
+            type="submit"
+            color="info"
+          />
         </template>
       </CardBox>
     </SectionMain>

@@ -78,8 +78,7 @@ const menuClick = (event) => {
       <span
         class="grow text-ellipsis line-clamp-1"
         :class="activeInactiveStyle"
-        >{{ item.label }}</span
-      >
+      >{{ item.label }}</span>
       <BaseIcon
         v-if="hasDropdown"
         :path="isDropdownActive ? mdiMinus : mdiPlus"

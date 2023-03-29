@@ -33,11 +33,21 @@ const submit = () => {
   <LayoutGuest>
     <Head title="Email Verification" />
 
-    <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
-      <CardBox :class="cardClass" is-form @submit.prevent="submit">
+    <SectionFullScreen
+      v-slot="{ cardClass }"
+      bg="purplePink"
+    >
+      <CardBox
+        :class="cardClass"
+        is-form
+        @submit.prevent="submit"
+      >
         <FormValidationErrors />
 
-        <NotificationBarInCard v-if="verificationLinkSent" color="info">
+        <NotificationBarInCard
+          v-if="verificationLinkSent"
+          color="info"
+        >
           A new verification link has been sent to the email address you
           provided during registration.
         </NotificationBarInCard>
@@ -60,7 +70,11 @@ const submit = () => {
             :class="{ 'opacity-25': form.processing }"
             :disabled="form.processing"
           />
-          <Link :href="route('logout')" method="post" as="button">
+          <Link
+            :href="route('logout')"
+            method="post"
+            as="button"
+          >
             Logout
           </Link>
         </BaseLevel>

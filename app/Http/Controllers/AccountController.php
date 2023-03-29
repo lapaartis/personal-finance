@@ -15,7 +15,7 @@ class AccountController extends Controller
     public function index()
     {
         return Inertia::render(
-            'Account/Index',
+            'Account/IndexView',
             [
                 'accounts' => Auth::user()->accounts()->get()
             ]

@@ -7,13 +7,17 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="py-2 px-6" :class="containerMaxW">
+  <footer
+    class="py-2 px-6"
+    :class="containerMaxW"
+  >
     <BaseLevel>
       <div class="text-center md:text-left">
-        <b
-          >&copy;{{ year }},
-          <a href="https://mananauda.lv/" target="_blank">ManaNauda.lv</a>.</b
-        >
+        <b>&copy;{{ year }},
+          <a
+            href="https://mananauda.lv/"
+            target="_blank"
+          >ManaNauda.lv</a>.</b>
         <slot />
       </div>
       <div class="md:py-2">

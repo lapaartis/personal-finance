@@ -37,7 +37,7 @@ const submit = () => {
 
 <template>
   <LayoutGuest>
-    <Head title="Log in"/>
+    <Head title="Log in" />
 
     <SectionFullScreen
       v-slot="{ cardClass }"
@@ -48,7 +48,7 @@ const submit = () => {
         is-form
         @submit.prevent="submit"
       >
-        <FormValidationErrors/>
+        <FormValidationErrors />
 
         <NotificationBarInCard
           v-if="status"
@@ -63,9 +63,9 @@ const submit = () => {
           help="Please enter your email"
         >
           <FormControl
+            id="email"
             v-model="form.email"
             :icon="mdiAccount"
-            id="email"
             autocomplete="email"
             type="email"
             required
@@ -78,10 +78,10 @@ const submit = () => {
           help="Please enter your password"
         >
           <FormControl
+            id="password"
             v-model="form.password"
             :icon="mdiAsterisk"
             type="password"
-            id="password"
             autocomplete="current-password"
             required
           />
@@ -93,7 +93,7 @@ const submit = () => {
           :options="{ remember: 'Remember me' }"
         />
 
-        <BaseDivider/>
+        <BaseDivider />
 
         <BaseLevel>
           <BaseButtons>

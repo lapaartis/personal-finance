@@ -57,11 +57,11 @@ const submit = () => {
           help="Please enter your email"
         >
           <FormControl
+            id="email"
             v-model="form.email"
             :icon="mdiEmail"
             autocomplete="email"
             type="email"
-            id="email"
             required
           />
         </FormField>
@@ -72,11 +72,11 @@ const submit = () => {
           help="Please enter new password"
         >
           <FormControl
+            id="password"
             v-model="form.password"
             :icon="mdiFormTextboxPassword"
             type="password"
             autocomplete="new-password"
-            id="password"
             required
           />
         </FormField>
@@ -87,11 +87,11 @@ const submit = () => {
           help="Please confirm new password"
         >
           <FormControl
+            id="password_confirmation"
             v-model="form.password_confirmation"
             :icon="mdiFormTextboxPassword"
             type="password"
             autocomplete="new-password"
-            id="password_confirmation"
             required
           />
         </FormField>

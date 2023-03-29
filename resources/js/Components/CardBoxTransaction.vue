@@ -64,12 +64,21 @@ const icon = computed(() => {
 </script>
 
 <template>
-  <CardBox class="mb-6 last:mb-0" is-hoverable>
+  <CardBox
+    class="mb-6 last:mb-0"
+    is-hoverable
+  >
     <BaseLevel>
       <BaseLevel type="justify-start">
-        <IconRounded :icon="icon.icon" :color="icon.type" class="md:mr-6" />
+        <IconRounded
+          :icon="icon.icon"
+          :color="icon.type"
+          class="md:mr-6"
+        />
         <div class="text-center space-y-1 md:text-left md:mr-6">
-          <h4 class="text-xl">${{ amount }}</h4>
+          <h4 class="text-xl">
+            ${{ amount }}
+          </h4>
           <p class="text-gray-500 dark:text-slate-400">
             <b>{{ date }}</b> via {{ business }}
           </p>
@@ -80,7 +89,11 @@ const icon = computed(() => {
           {{ name }}
         </p>
         <div>
-          <PillTag :color="icon.type" :label="type" small />
+          <PillTag
+            :color="icon.type"
+            :label="type"
+            small
+          />
         </div>
       </div>
     </BaseLevel>

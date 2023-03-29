@@ -41,7 +41,10 @@ const submit = () => {
   <LayoutGuest>
     <Head title="Register" />
 
-    <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
+    <SectionFullScreen
+      v-slot="{ cardClass }"
+      bg="purplePink"
+    >
       <CardBox
         :class="cardClass"
         class="my-24"
@@ -50,10 +53,14 @@ const submit = () => {
       >
         <FormValidationErrors />
 
-        <FormField label="Name" label-for="name" help="Please enter your name">
+        <FormField
+          label="Name"
+          label-for="name"
+          help="Please enter your name"
+        >
           <FormControl
-            v-model="form.name"
             id="name"
+            v-model="form.name"
             :icon="mdiAccount"
             autocomplete="name"
             type="text"
@@ -67,8 +74,8 @@ const submit = () => {
           help="Please enter your email"
         >
           <FormControl
-            v-model="form.email"
             id="email"
+            v-model="form.email"
             :icon="mdiEmail"
             autocomplete="email"
             type="email"
@@ -82,8 +89,8 @@ const submit = () => {
           help="Please enter new password"
         >
           <FormControl
-            v-model="form.password"
             id="password"
+            v-model="form.password"
             :icon="mdiFormTextboxPassword"
             type="password"
             autocomplete="new-password"
@@ -97,8 +104,8 @@ const submit = () => {
           help="Please confirm your password"
         >
           <FormControl
-            v-model="form.password_confirmation"
             id="password_confirmation"
+            v-model="form.password_confirmation"
             :icon="mdiFormTextboxPassword"
             type="password"
             autocomplete="new-password"
@@ -123,7 +130,12 @@ const submit = () => {
             :class="{ 'opacity-25': form.processing }"
             :disabled="form.processing"
           />
-          <BaseButton route-name="login" color="info" outline label="Login" />
+          <BaseButton
+            route-name="login"
+            color="info"
+            outline
+            label="Login"
+          />
         </BaseButtons>
       </CardBox>
     </SectionFullScreen>

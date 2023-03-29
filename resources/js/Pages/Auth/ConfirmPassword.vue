@@ -55,11 +55,11 @@ const submit = () => {
         >
           <FormControl
             id="password"
-            @set-ref="passwordInput = $event"
             v-model="form.password"
             type="password"
             required
             autocomplete="current-password"
+            @set-ref="passwordInput = $event"
           />
         </FormField>
 

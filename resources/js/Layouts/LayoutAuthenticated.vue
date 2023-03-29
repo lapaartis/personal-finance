@@ -75,7 +75,10 @@ const menuClick = (event, item) => {
           display="hidden lg:flex xl:hidden"
           @click.prevent="isAsideLgActive = true"
         >
-          <BaseIcon :path="mdiMenu" size="24" />
+          <BaseIcon
+            :path="mdiMenu"
+            size="24"
+          />
         </NavBarItemPlain>
         <NavBarItemPlain use-margin>
           <FormControl
