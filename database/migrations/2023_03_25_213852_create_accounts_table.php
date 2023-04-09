@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
+use App\Models\Accounts\AccountType;
 
 return new class extends Migration
 {
@@ -12,15 +14,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->id();
+            $table->timestamps();
+            $table->softDeletes();
+            $table->foreignIdFor(User::class)->constrained((new User)->getTable());
+            $table->foreignIdFor(AccountType::class)->constrained((new AccountType)->getTable());
             $table->string('name');
             $table->string('iban')->nullable();
             $table->decimal('balance', 10, 2);
-            $table->string('description');
-            $table->softDeletes();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('description')->default('');
         });
     }
 

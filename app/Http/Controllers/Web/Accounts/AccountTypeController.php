@@ -1,25 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\Accounts;
 
-use App\Models\Account;
+use App\Http\Controllers\Controller;
+use App\Models\Accounts\AccountType;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
 
-class AccountController extends Controller
+class AccountTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render(
-            'Account/IndexView',
-            [
-                'accounts' => Auth::user()->accounts()->get()
-            ]
-        );
+        //
     }
 
     /**
@@ -41,7 +35,7 @@ class AccountController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Account $account)
+    public function show(AccountType $accountTypes)
     {
         //
     }
@@ -49,7 +43,7 @@ class AccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Account $account)
+    public function edit(AccountType $accountTypes)
     {
         //
     }
@@ -57,7 +51,7 @@ class AccountController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Account $account)
+    public function update(Request $request, AccountType $accountTypes)
     {
         //
     }
@@ -65,7 +59,7 @@ class AccountController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Account $account)
+    public function destroy(AccountType $accountTypes)
     {
         //
     }
