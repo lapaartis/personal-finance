@@ -23,26 +23,24 @@ class CategoryController extends Controller
     {
         $categories = Auth::user()->categories()->get();
 
-        return response()->json( $categories );
+        return response()->json($categories);
     }
 
     public function show(Request $request, Category $category): JsonResponse
     {
-        return response()->json( $category );
+        return response()->json($category);
     }
 
     public function store(StoreCategoryRequest $request): JsonResponse
     {
-        $categoryEntity = new StoreCategory( $request->user(), $request->all() );
-        $categoryEntity->store();
+        (new StoreCategory($request->user(), $request->all()))->store();
 
-        return response()->json( null, 201 );
+        return response()->json(null, 201);
     }
 
     public function update(UpdateCategoryRequest $request, Category $category): JsonResponse
     {
-        $categoryEntity = new UpdateCategory( $request->user(), $category, $request->all() );
-        $categoryEntity->update();
+        (new UpdateCategory($request->user(), $category, $request->all()))->update();
 
         return response()->json('', 204);
     }
