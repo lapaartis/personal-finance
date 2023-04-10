@@ -38,7 +38,7 @@
                         <td data-label="IBAN">{{ account.iban }}</td>
                         <td data-label="Balance">{{ account.balance }}</td>
                         <td data-label="Description">{{ account.description }}</td>
-                        <td>
+                        <td class="before:hidden lg:w-1 whitespace-nowrap">
                             <BaseButton
                                 :href="$route('accounts.show', account.id)"
                                 label="View"

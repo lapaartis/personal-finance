@@ -30,7 +30,7 @@
                     <tbody>
                     <tr v-for="category in categories" :key="category.id">
                         <td data-label="Name">{{ category.name }}</td>
-                        <td>
+                        <td class="before:hidden lg:w-1 whitespace-nowrap">
                             <BaseButton
                                 :href="$route('categories.show', category.id)"
                                 label="View"
