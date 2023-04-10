@@ -2,10 +2,21 @@
 
 namespace App\Models\Accounts;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * Table: account_types
+*
+* === Columns ===
+ * @property int $id
+ * @property string $type
+*
+* === Relationships ===
+ * @property-read Account[]|Collection $accounts
+*/
 class AccountType extends Model
 {
     use HasFactory;
