@@ -187,7 +187,11 @@ export default {
                         this.hideModal();
                     }.bind(this))
                     .catch(function (error) {
-                        console.error(error.response.data.errors);
+                        if (error.response.status === 422) {
+                            this.setServerSideValidations(error.response.data.errors);
+                        } else {
+                            console.error(error.response);
+                        }
                     }.bind(this));
             }
         },
@@ -225,6 +229,13 @@ export default {
 
         hideModal() {
             this.show = false
+        },
+
+        setServerSideValidations(errors) {
+            for (const [key, value] of Object.entries(errors)) {
+                this.validations[key].valid = false;
+                this.validations[key].message = value[0];
+            }
         }
     }
 }
