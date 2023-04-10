@@ -10,6 +10,7 @@ import {
     mdiTelevisionGuide,
     mdiResponsive,
     mdiPalette,
+    mdiShapeOutline,
     mdiPiggyBankOutline,
 } from "@mdi/js";
 
@@ -23,6 +24,11 @@ export default [
         route: "accounts.index",
         icon: mdiPiggyBankOutline,
         label: "Accounts",
+    },
+    {
+        route: "categories.index",
+        icon: mdiShapeOutline,
+        label: "Categories",
     },
     {
         route: "tables",

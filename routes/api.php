@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\Accounts\AccountController;
 use App\Http\Controllers\API\Accounts\AccountTypeController;
+use App\Http\Controllers\API\Categories\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,12 @@ Route::prefix('v1')->name('api.')->group(function () {
     });
 
     Route::get('account-types', [AccountTypeController::class, 'index'])->name('account-types.index');
+
+    Route::prefix('categories')->name('categories.')->group(function () {
+        # URL prefix /api/v1/categories/xxx, Route name prefix api.categories.xxx
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::post('/', [CategoryController::class, 'store'])->name('store');
+        Route::get('{category}', [CategoryController::class, 'show'])->name('show');
+        Route::put('{category}', [CategoryController::class, 'update'])->name('update');
+    });
 });

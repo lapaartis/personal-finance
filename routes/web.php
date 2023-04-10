@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Web\Accounts\AccountController;
+use App\Http\Controllers\Web\Categories\CategoryController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -41,4 +42,6 @@ Route::middleware([
 
     Route::get('accounts', [AccountController::class, 'index'])->name('accounts.index');
     Route::get('accounts/{account}', [AccountController::class, 'show'])->name('accounts.show');
+    Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 });

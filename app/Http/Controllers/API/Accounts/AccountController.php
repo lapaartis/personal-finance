@@ -34,16 +34,16 @@ class AccountController extends Controller
     public function store(StoreAccountRequest $request): JsonResponse
     {
 
-        $account = new StoreAccount( $request->user(), $request->all() );
-        $account->store();
+        $accountEntity = new StoreAccount( $request->user(), $request->all() );
+        $accountEntity->store();
 
         return response()->json( null, 201 );
     }
 
     public function update(UpdateAccountRequest $request, Account $account): JsonResponse
     {
-        $account = new UpdateAccount( $request->user(), $account, $request->all() );
-        $account->update();
+        $accountEntity = new UpdateAccount( $request->user(), $account, $request->all() );
+        $accountEntity->update();
 
         return response()->json('', 204);
     }
